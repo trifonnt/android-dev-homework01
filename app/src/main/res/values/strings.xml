@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Trifon Homework 01</string>
+    <string name="button_01">Button 01</string>
+    <string name="button_02">Button 02</string>
+    <string name="act02_button_01">Activity 02 - Button 01</string>
+    <string name="act02_button_02">Activity 02 - Button 02</string>
+    <string name="act02_button_03">Activity 02 - Button 03</string>
+
+    <string name="act03_textView">Activity 03 - TextView 01</string>
+</resources>
