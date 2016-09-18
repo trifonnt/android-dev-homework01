@@ -13,43 +13,43 @@ import android.widget.TextView;
  */
 public class ThirdActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private final static String TAG_FOR_DEBUG = ThirdActivity.class.getSimpleName();
+	private final static String TAG_FOR_DEBUG = ThirdActivity.class.getSimpleName();
 
-    private TextView txtView01;
-    private TextView txtView02;
-    private Button returnButton;
+	private TextView txtView01;
+	private TextView txtView02;
+	private Button returnButton;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_third);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_third);
 
-        txtView01 = (TextView) findViewById(R.id.act03_textView_01);
-        txtView02 = (TextView) findViewById(R.id.act03_textView_02);
-        returnButton = (Button) findViewById(R.id.act03_return_button);
+		txtView01 = (TextView) findViewById(R.id.act03_textView_01);
+		txtView02 = (TextView) findViewById(R.id.act03_textView_02);
+		returnButton = (Button) findViewById(R.id.act03_return_button);
 
-        Intent intent = getIntent();
-        if (intent != null) {
-            int txtViewId = intent.getIntExtra("txtViewId", -1);
-            String txtViewContent = intent.getStringExtra("txtViewContent");
+		Intent intent = getIntent();
+		if (intent != null) {
+			int txtViewId = intent.getIntExtra("txtViewId", -1);
+			String txtViewContent = intent.getStringExtra("txtViewContent");
 
-            txtView01.setText(String.valueOf(txtViewId));
-            txtView02.setText(txtViewContent);
-        }
+			txtView01.setText(String.valueOf(txtViewId));
+			txtView02.setText(txtViewContent);
+		}
 
-        returnButton.setOnClickListener(this);
-    }
+		returnButton.setOnClickListener(this);
+	}
 
 
-    @Override
-    public void onClick(View view) {
-        if (view.getId() == R.id.act03_return_button) {
-            Log.d(TAG_FOR_DEBUG, "Clicked Return button!");
+	@Override
+	public void onClick(View view) {
+		if (view.getId() == R.id.act03_return_button) {
+			Log.d(TAG_FOR_DEBUG, "Clicked Return button!");
 
-            Intent returnIntent = getIntent();
-            returnIntent.putExtra("result", 500);
-            setResult(RESULT_OK, returnIntent);
-            finish();
-        }
-    }
+			Intent returnIntent = getIntent();
+			returnIntent.putExtra("result", 500);
+			setResult(RESULT_OK, returnIntent);
+			finish();
+		}
+	}
 }

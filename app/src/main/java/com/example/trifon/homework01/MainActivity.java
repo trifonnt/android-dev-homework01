@@ -11,47 +11,47 @@ import android.widget.Button;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private final static String TAG_FOR_DEBUG = MainActivity.class.getSimpleName();
+	private final static String TAG_FOR_DEBUG = MainActivity.class.getSimpleName();
 
-    private Button btn01;
-    private int timesBtn01Clicked;
+	private Button btn01;
+	private int timesBtn01Clicked;
 
-    private Button btn02;
-    private int timesBtn02Clicked;
+	private Button btn02;
+	private int timesBtn02Clicked;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
 
-        Log.d(TAG_FOR_DEBUG, "onCreate");
+		Log.d(TAG_FOR_DEBUG, "onCreate");
 
-        // @Trifon - get reference to buttons
-        btn01 = (Button) findViewById(R.id.button01);
-        btn01.setOnClickListener(this);
+		// @Trifon - get reference to buttons
+		btn01 = (Button) findViewById(R.id.button01);
+		btn01.setOnClickListener(this);
 
-        btn02 = (Button) findViewById(R.id.button02);
-    }
+		btn02 = (Button) findViewById(R.id.button02);
+	}
 
-    @Override
-    public void onClick(View view) {
-        if (view.getId() == R.id.button01) {
-            timesBtn01Clicked++;
-            Log.d(TAG_FOR_DEBUG, "Button01 was clicked: " + String.valueOf(timesBtn01Clicked));
+	@Override
+	public void onClick(View view) {
+		if (view.getId() == R.id.button01) {
+			timesBtn01Clicked++;
+			Log.d(TAG_FOR_DEBUG, "Button01 was clicked: " + String.valueOf(timesBtn01Clicked));
 
-            btn01.setText(String.valueOf(timesBtn01Clicked));
-        }
-    }
+			btn01.setText(String.valueOf(timesBtn01Clicked));
+		}
+	}
 
-    public void onButton02Clicked(View view) {
-        if (view.getId() == R.id.button02) {
-            timesBtn02Clicked++;
-            Log.d(TAG_FOR_DEBUG, "Button02 was clicked: " + String.valueOf(timesBtn02Clicked));
-            btn02.setText(String.valueOf(timesBtn02Clicked));
+	public void onButton02Clicked(View view) {
+		if (view.getId() == R.id.button02) {
+			timesBtn02Clicked++;
+			Log.d(TAG_FOR_DEBUG, "Button02 was clicked: " + String.valueOf(timesBtn02Clicked));
+			btn02.setText(String.valueOf(timesBtn02Clicked));
 
-            // Exits from the application
-            //finish();
-        }
-    }
+			// Exits from the application
+			//finish();
+		}
+	}
 }
